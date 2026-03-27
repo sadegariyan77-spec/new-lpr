@@ -1,0 +1,227 @@
+:root {
+    --gold: #ffd700;
+    --dark: #0f0f0f;
+    --card-bg: #1a1a1a;
+    --quora-red: #b92b27;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0; background: var(--dark); color: white; line-height: 1.6;
+}
+
+.container { width: 90%; max-width: 1100px; margin: auto; }
+
+header {
+    text-align: center; padding: 80px 20px;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1596838132731-dd93c85243ef?q=80&w=2070');
+    background-size: cover; border-bottom: 2px solid var(--gold);
+}
+
+.brand-logo { font-size: 3rem; color: #fff; margin-bottom: 10px; }
+.brand-logo span { color: var(--gold); }
+
+.btn {
+    padding: 15px 30px; text-decoration: none; font-weight: bold; border-radius: 50px;
+    display: inline-block; margin: 10px; transition: 0.3s;
+}
+
+.btn-main { background: var(--gold); color: black; border: 2px solid var(--gold); }
+.btn-sub { border: 2px solid var(--gold); color: var(--gold); }
+
+.pulse { animation: pulse-animation 2s infinite; }
+@keyframes pulse-animation {
+    0% { box-shadow: 0 0 0 0px rgba(255, 215, 0, 0.4); }
+    100% { box-shadow: 0 0 0 20px rgba(255, 215, 0, 0); }
+}
+
+.info-bar { background: #222; padding: 15px 0; font-weight: bold; color: var(--gold); }
+.flex-around { display: flex; justify-content: space-around; flex-wrap: wrap; }
+
+/* RTP Grid */
+.rtp-section { padding: 60px 0; }
+.section-title { text-align: center; margin-bottom: 30px; font-size: 2rem; }
+.rtp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+.rtp-card { background: var(--card-bg); padding: 15px; border-radius: 12px; text-align: center; border: 1px solid #333; }
+.rtp-card img { width: 100%; border-radius: 8px; margin-bottom: 10px; }
+
+.progress-container { background: #333; height: 20px; border-radius: 10px; position: relative; overflow: hidden; margin-top: 10px; }
+.progress-bar { height: 100%; transition: width 1s ease; }
+.percent-text { position: absolute; width: 100%; left: 0; font-size: 12px; font-weight: bold; color: #fff; line-height: 20px; }
+
+/* Quora FAQ */
+.faq-card { background: var(--card-bg); margin-bottom: 10px; border-radius: 8px; cursor: pointer; border-left: 4px solid var(--quora-red); }
+.faq-question { padding: 20px; display: flex; justify-content: space-between; align-items: center; }
+.faq-answer { padding: 0 20px; max-height: 0; overflow: hidden; transition: 0.3s ease-out; color: #bbb; }
+.faq-card.active .faq-answer { max-height: 200px; padding-bottom: 20px; }
+
+.whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.5); z-index: 999; }
+
+footer { padding: 30px; text-align: center; background: #000; color: #555; font-size: 14px; }
+/* Neon Effect & Animations */
+.neon-text {
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 0 10px #00f2ff, 0 0 20px #00f2ff, 0 0 40px #00f2ff;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.table-container {
+    overflow-x: auto;
+    background: #000;
+    border-radius: 15px;
+    position: relative;
+    padding: 2px; /* Space for neon border */
+}
+
+/* Animasi Border Neon Bergerak */
+.neon-border {
+    border: 2px solid #00f2ff;
+    box-shadow: 0 0 15px #00f2ff;
+    animation: neon-glow 2s infinite alternate;
+}
+
+@keyframes neon-glow {
+    from { box-shadow: 0 0 5px #00f2ff, 0 0 10px #00f2ff; }
+    to { box-shadow: 0 0 20px #00f2ff, 0 0 30px #bd00ff; border-color: #bd00ff; }
+}
+
+.rtp-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #111;
+    color: white;
+}
+
+.rtp-table th {
+    background: #222;
+    padding: 15px;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.rtp-table td {
+    padding: 15px;
+    border-bottom: 1px solid #333;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.game-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-align: left;
+}
+
+.game-img-small {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    border: 1px solid var(--gold);
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.gacor { background: #00ff00; color: #000; box-shadow: 0 0 10px #00ff00; }
+.stabil { background: #ffd700; color: #000; }
+.sedang { background: #ff4d4d; color: #fff; }
+
+/* Progress Bar di dalam Tabel */
+.bar-wrap {
+    width: 100%;
+    background: #333;
+    height: 12px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.bar-fill {
+    height: 100%;
+    transition: width 1.5s ease-in-out;
+}
+/* CSS untuk Logo Header Baru */
+.logo-wrapper {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-link {
+    display: inline-block;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Efek Neon di Sekitar Logo saat Dihover */
+.logo-link:hover {
+    transform: scale(1.05); /* Sedikit membesar saat dihover */
+    box-shadow: 0 0 20px #00f2ff, 0 0 40px #bd00ff;
+    background-color: rgba(0, 0, 0, 0.5); /* Latar belakang gelap tipis saat hover */
+}
+
+.main-logo {
+    max-width: 350px; /* Lebar maksimal logo */
+    height: auto; /* Tinggi otomatis menjaga proporsi */
+    display: block;
+    filter: drop-shadow(0 0 5px rgba(0, 242, 255, 0.5)); /* Efek glow halus pada logo itu sendiri */
+}
+
+/* Responsif untuk Mobile */
+@media (max-width: 768px) {
+    .main-logo {
+        max-width: 250px; /* Lebih kecil di HP */
+    }
+    .neon-text-slogan {
+        font-size: 1.5rem; /* Slogan lebih kecil di HP */
+    }
+}
+
+/* Slogan di bawah logo */
+.neon-text-slogan {
+    color: #fff;
+    text-shadow: 0 0 10px #00f2ff;
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+/* Gaya untuk Link Game di Tabel */
+.game-link-wrapper {
+    text-decoration: none;
+    color: inherit; /* Mengikuti warna teks tabel */
+    display: inline-block;
+    transition: all 0.2s ease;
+}
+
+.game-link-wrapper:hover {
+    transform: translateX(5px); /* Efek bergeser sedikit saat hover */
+}
+
+.game-name-text {
+    font-weight: bold;
+    color: #fff;
+    transition: color 0.2s;
+}
+
+.game-link-wrapper:hover .game-name-text {
+    color: #00f2ff; /* Warna teks berubah jadi neon biru saat di-hover */
+    text-shadow: 0 0 8px #00f2ff;
+}
+
+.game-link-wrapper:hover .game-img-small {
+    border-color: #00f2ff;
+    box-shadow: 0 0 10px #00f2ff;
+}
