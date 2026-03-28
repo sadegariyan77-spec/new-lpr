@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Lokasi Sitemap Anda
+Sitemap: https://new-lpr.pages.dev/sitemap.xml
